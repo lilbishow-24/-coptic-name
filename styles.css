@@ -1,0 +1,81 @@
+/* الألوان: ذهبي (#FFD700)، أزرق كوبالت/لوتس (#005689)، بيج/رملي (#F5F5DC) */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F5F5DC; /* لون الخلفية الرملي */
+    direction: rtl; 
+    text-align: right;
+    padding: 20px;
+    /* خلفية بنقش عنخ خفيف (رمز الحياة) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><text x="0" y="80" style="font-size: 100px; fill: #005689; font-family: sans-serif;">☥</text></svg>'); 
+    background-repeat: repeat;
+}
+.container {
+    max-width: 650px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid #FFD700; /* إطار ذهبي */
+}
+h2 {
+    color: #005689; /* عنوان أزرق كوبالت */
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+p {
+    color: #333;
+    line-height: 1.6;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 25px;
+    border: 2px solid #005689;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: right;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+button {
+    background-color: #FFD700; /* زر ذهبي */
+    color: #005689; /* نص أزرق */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+button:hover {
+    background-color: #e0b700; 
+    color: white;
+}
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px dashed #005689; 
+    border-radius: 8px;
+    background-color: #fff9e6; /* خلفية صفراء خفيفة للنتيجة */
+    font-size: 36px; 
+    color: #000;
+    text-align: center;
+    font-family: 'Times New Roman', serif; 
+    font-weight: bold;
+}
+.coptic-note {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    text-align: center;
+}

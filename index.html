@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محوّل الاسم القبطي الفرعوني</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+<div class="container">
+    <h2>بوابة حورس للتحويل القبطي</h2>
+    <p>أدخل اسمك باللغة العربية أو الإنجليزية. سنقوم بتحويل نطق الاسم إلى رموز الأبجدية القبطية القديمة.</p>
+
+    <input type="text" id="NameInput" placeholder="اكتب اسمك هنا (مثل: شنودة أو Mina)">
+    
+    <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+        <button onclick="convertToCoptic()" style="flex-grow: 1;">اكتب اسمي على حجر رشيد</button>
+        <button onclick="speakCopticName()" id="speakButton" style="flex-grow: 1; background-color: #009688; color: white;">انطق الاسم الفرعوني!</button>
+    </div>
+
+    <div class="result" id="copticResult">
+        سوف يظهر النطق القبطي هنا...
+    </div>
+
+    <p class="coptic-note">ملاحظة: النطق الصوتي يعتمد على الأصوات العربية في متصفحك وتم ضبطه ليناسب الطابع القديم.</p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
