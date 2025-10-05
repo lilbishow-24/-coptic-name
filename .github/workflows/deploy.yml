@@ -1,0 +1,48 @@
+# اسم سير العمل (Workflow)
+name: Deploy GitHub Pages
+
+# تشغيل هذا السير كلما تم دفع (push) تغييرات إلى فرع main
+on:
+  push:
+    branches:
+      - main
+  # يسمح بتشغيل هذا السير يدوياً من واجهة GitHub
+  workflow_dispatch:
+
+# تحديد الأذونات اللازمة للنشر
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# وظيفة النشر
+jobs:
+  deploy:
+    # يعمل على أحدث إصدار من Ubuntu
+    runs-on: ubuntu-latest
+    
+    # تحديد بيئة النشر (مطلوب لخدمة GitHub Pages)
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # 1. سحب الكود من المستودع
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. إعداد خدمة Pages (لتحديد المجلد الأساسي للنشر)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 3. رفع ملفات المشروع كمادة قابلة للنشر
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # هذا هو المجلد الذي سيتم نشره، وبما أن ملفاتك في المجلد الرئيسي، نستخدم (./)
+          path: './'
+
+      # 4. نشر المواد المرفوعة إلى GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
